@@ -1,0 +1,443 @@
+/*=============== FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500;700&family=Inter&display=swap');
+
+/*=============== ROOT FONT SIZE ===============*/
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+
+  /*========== Colors ==========*/
+  --primary-color: #EA6D27;
+  --secondary-color: #101A24;
+  --heading-color: var(--secondary-color);
+  --body-color: #fff;
+  --text-color: #5C6574;
+  --white-color: white;
+  --light-gray-color: #f3f3f4;
+  --black-color: var(--secondary-color);
+
+  /*========== Font and typography ==========*/
+  /* 1rem = 10px */
+  --body-font: 'Inter', sans-serif;;
+  --title-font:'David Libre', serif;
+  --font-size-200: 1.2rem;
+  --font-size-300: 1.5rem;
+  --font-size-400: 1.6rem;
+  --font-size-500: 2rem;
+  --font-size-600: 2rem;
+  --font-size-700: 3rem;
+  --font-size-800: 4rem;
+
+  /*========== z index ==========*/
+  --z-300: -10;
+  --z-400: 10;
+  --z-500: 99;
+  --z-600: 999;
+
+
+  /*========== other ==========*/
+  --header-height: 7rem;
+  --transition-400: .4s;
+  --radius-400: 3rem;
+  --radius-500: 6rem;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    /*========== Font and typography ==========*/
+    --font-size-200: 1.2rem;
+    --font-size-300: 1.5rem;
+    --font-size-400: 1.6rem;
+    --font-size-500: 2rem;
+    --font-size-600: 5rem;
+    --font-size-700: 6rem;
+    --font-size-800: 7rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--font-size-400);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.8;
+  transition: background 0.4s; /* for dark mode animation */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1150px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.section-spacing {
+  padding-block: 9rem;
+}
+
+.title{
+  font-family: var(--title-font);
+  color: var(--heading-color);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.section__title {
+  font-size: var(--font-size-700);
+  margin-bottom: 2.7rem;
+  text-align: left;
+}
+
+.section__title {
+  text-align: center;
+}
+
+.main {
+  overflow: hidden; /* For animation */
+}
+
+.socials-icons {
+  display: inline-flex;
+  column-gap: 1.5rem;
+}
+
+.socials-icons a{
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  transition: color var(--transition-400) background-color var(--transition-400);
+  border-radius: 50%;
+}
+
+.socials-icons a:hover{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+
+/*=============== BUTTONS ===============*/
+.multiple-buttons{
+  display: inline-flex;
+  column-gap: 25px;
+}
+
+.btn{
+  background-color: red;
+  display: inline-block;
+  font-size: var(--font-size-500);
+  font-family: var(--title-font);
+  padding: .8rem 3.5rem;
+  color: var(--white-color);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 2rem 0 2rem ;
+  border: 1px solid;
+  transition: background-color var(--transition-400);
+}
+
+.btn.btn-primary{
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn.btn-secondary{
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn.btn-secondary:hover{
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/*=============== HEADER ===============*/
+#header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: var(--header-height);
+  z-index: var(--z-500);
+  transition: background-color var(--transition-400);
+}
+
+#header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.nav__logo{
+  display: inline-flex;
+}
+
+.nav__logo img{
+  max-width: 150px;
+}
+
+.nav__toggle {
+  color: var(--primary-color);
+}
+
+.nav__toggle,
+.nav__close {
+  transition: color var(--transition-400);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav__toggle:hover,
+.nav__close:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 767px) {
+  .nav__menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-600);
+    background-color: var(--primary-color);
+    padding: 2.5rem;
+    transition: left var(--transition-400);
+  }
+
+  .nav__list{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: .5rem;
+  }
+
+  .nav__link{
+    color: var(--white-color);
+    font-size: var(--font-size-500);
+    padding: .4rem 0;
+    display: inline-block;
+    transition: color var(--transition-400);
+  }
+
+  .nav__link:hover{
+    color: var(--secondary-color);
+  }
+
+  .nav__close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 3rem;
+    color: var(--white-color);
+  }
+
+  .nav__button{
+    margin-top: 3rem;
+  }
+
+  .nav__button .btn:hover{
+    border-color: var(--secondary-color);
+  }
+}
+
+
+
+/* Show menu */
+.show-offcanvas{
+  left: 0;
+}
+
+/* Sticky header */
+#header.sticky {
+  background-color: var(--white-color);
+  box-shadow: 1px 1px 20px -5px #e9e9e9;
+}
+
+/* Active link */
+
+
+/*=============== HERO ===============*/
+.hero{
+  position: relative;
+  overflow: hidden;
+  padding-block: 120px 90px;
+}
+
+.hero .hero__container {
+  row-gap: 7rem;
+}
+
+.hero .hero__bg-circles {
+  min-width: 800px;
+  position: absolute;
+  top: -300px;
+  left: -450px;
+  z-index: var(--z-300);
+}
+
+.hero .hero__data{
+  position: relative;
+}
+
+.hero .hero__data-circle{
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.hero .hero__title{
+  font-size: var(--font-size-800);
+}
+
+.hero .hero__text {
+  margin-block: 4rem 3rem;
+}
+
+.hero .hero__buttons {
+  margin-bottom: 5rem;
+}
+
+.hero .hero__socials .socials-icons {
+  position: relative;
+}
+
+.hero .hero__socials .socials-icons a {
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2.1rem;
+}
+
+.hero .hero__socials .socials-icons::after {
+  content: "";
+  width: 145px;
+  height: .1px;
+  background-color: black;
+  opacity: .15;
+  position: absolute;
+  left: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero .hero__image{
+  position: relative;
+}
+
+.hero .hero__image-wrapper{
+  position: relative;
+  max-width: 90%;
+  margin-inline: auto;
+  display: block;
+}
+
+.hero .hero__image-big{
+  border-radius: var(--radius-500) var(--radius-400) var(--radius-500) var(--radius-400);
+  max-width: unset;
+  width: 100%;
+}
+
+.hero .hero__image-small {
+  position: absolute;
+  left: 5%;
+  bottom: 2%;
+  z-index: var(--z-400);
+  max-width: 200px;
+}
+
+.hero .hero__image-shape {
+  position: absolute;
+  z-index: var(--z-300);
+}
+
+.hero .hero__image .shape1{
+  left: 0px;
+  top: -40px;
+  width: 50%;
+}
+
+.hero .hero__image .shape2{
+  right: -15px;
+  top: -40px;
+  width: 50%;
+}
+
+.hero .hero__image .shape3{
+  right: -15px;
+  bottom: 40px;
+  width: 50%;
+}
+
+
+/*=============== GRAY BG SECTIONS ===============*/
+
+/*==== ABOUT ====*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
