@@ -36,6 +36,20 @@ const stickyHeader = () => {
 
 window.addEventListener("scroll", stickyHeader)
 
+/*=============== TESTIMONIALS SLIDER ===============*/ 
+
+const swiper = new Swiper('.testimonials__slider .swiper', {
+    speed: 400,
+    loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+  });
+
+
 /*=============== SHOW SCROLL UP ===============*/ 
 
 
