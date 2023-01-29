@@ -675,6 +675,8 @@ img {
 .testimonials .testimonials__slider {
   margin: 5rem auto 0;
   max-width: 640px;
+  position: relative;
+  z-index: var(--z-400);
 }
 
 .testimonials .testimonials__slider-wrap {
