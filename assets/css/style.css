@@ -326,6 +326,7 @@ img {
 .hero .hero__data-circle{
   width: 80px;
   margin-bottom: 30px;
+  animation: rotate-360 7s infinite linear;
 }
 
 .hero .hero__title{
@@ -385,6 +386,7 @@ img {
   bottom: 2%;
   z-index: var(--z-400);
   max-width: 200px;
+  animation: left-to-right 4s infinite ease-in-out;
 }
 
 .hero .hero__image-shape {
@@ -463,6 +465,10 @@ img {
   margin-top: calc(var(--image-spacing) * -1);
   margin-inline: auto;
   width: 200px;
+}
+
+.specials .special__box-image img {
+  animation: rotate-left-to-right 5s infinite;
 }
 
 .specials .special__box-price {
@@ -547,6 +553,7 @@ img {
 
 .about .about__image-leaf {
   position: absolute;
+  animation: up-and-down 5s infinite linear;
 }
 
 .about .about__image-leaf.leaf1{
@@ -559,12 +566,14 @@ img {
   left: 5%;
   bottom: 35%;
   width: 10%;
+  animation-delay: .5s;
 }
 
 .about .about__image-leaf.leaf3{
   right: 1%;
   top: 17%;
   width: 23%;
+  animation: left-to-right 4s infinite ease-in-out;
 }
 
 .about .about__data {
@@ -912,6 +921,62 @@ img {
   bottom: 2rem;
   transform: scale(1);
 }
+
+/* CSS Animations*/
+
+@keyframes rotate-360 {
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-left-to-right {
+  0%{
+    transform: rotate(-6deg);
+  }
+
+  50%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-6deg);
+  }
+}
+
+@keyframes up-and-down {
+  0%{
+    transform: translateY(-30px);
+  }
+
+  50%{
+    transform: translateY(0px);
+  }
+
+  100%{
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes left-to-right {
+  0%{
+    transform: translateX(-30px);
+  }
+
+  50%{
+    transform: translateX(0px);
+  }
+
+  100%{
+    transform: translateX(-30px);
+  }
+}
+
+
 
 /*=============== BREAKPOINTS ===============*/
 /* Smallest devices */
